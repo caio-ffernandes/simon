@@ -11,6 +11,15 @@ const registerBtn = document.getElementById('register-btn');
 const usernameInput = document.getElementById('username');
 const gameSection = document.getElementById('game-section');
 const rankingList = document.getElementById('ranking-list');
+const cheatDisplay = document.createElement('div');  // Div para exibir a dica
+document.body.appendChild(cheatDisplay);  // Adiciona a div no body
+
+// Estilos para a dica numérica
+cheatDisplay.style.position = 'absolute';
+cheatDisplay.style.bottom = '10px';
+cheatDisplay.style.left = '10px';
+cheatDisplay.style.color = 'red';
+cheatDisplay.style.fontSize = '14px';
 
 // Carregar ranking do localStorage
 function loadRanking() {
@@ -73,6 +82,7 @@ function nextRound() {
     allowInput = false;
     playerSequence = [];
     displaySequence();
+    updateCheatDisplay();  // Atualiza a dica
 }
 
 // Exibe a sequência ao jogador
@@ -125,6 +135,19 @@ function checkSequence() {
         scoreDisplay.textContent = `Pontuação: ${score}`;
         setTimeout(nextRound, 1000);
     }
+}
+
+// Função para exibir as dicas com os números das cores
+function updateCheatDisplay() {
+    const colorMapping = {
+        green: 3,
+        red: 1,
+        yellow: 2,
+        blue: 4
+    };
+
+    let cheatSequence = sequence.map(color => colorMapping[color]).join(' ');
+    cheatDisplay.textContent = `${cheatSequence} `;
 }
 
 // Carregar o ranking ao iniciar
