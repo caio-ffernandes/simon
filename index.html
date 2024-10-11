@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Simon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo Simon</h1>
+        
+        <!-- Formulário de cadastro -->
+        <div id="register-form">
+            <h2>Cadastro de Jogador</h2>
+            <input type="text" id="username" placeholder="Nome de usuário" required>
+            <button id="register-btn">Cadastrar</button>
+        </div>
+
+        <!-- Jogo Simon -->
+        <div id="game-section" style="display:none;">
+            <div class="simon-game">
+                <div class="color-box" id="green"></div>
+                <div class="color-box" id="red"></div>
+                <div class="color-box" id="yellow"></div>
+                <div class="color-box" id="blue"></div>
+            </div>
+            <button id="start-game">Iniciar Jogo</button>
+            <div id="score">Pontuação: 0</div>
+        </div>
+
+        <!-- Ranking -->
+        <div id="ranking-section">
+            <h2>Ranking de Jogadores</h2>
+            <ul id="ranking-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

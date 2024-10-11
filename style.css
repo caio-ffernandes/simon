@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.simon-game {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-gap: 20px;
+    margin: 50px auto;
+    width: 320px;
+}
+
+.color-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#green { background-color: green; }
+#red { background-color: red; }
+#yellow { background-color: yellow; }
+#blue { background-color: blue; }
+
+#start-game {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.active {
+    opacity: 1 !important;
+}
